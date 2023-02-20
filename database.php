@@ -20,6 +20,7 @@ $sql = "INSERT INTO logindetails (userName,email,userPassword) VALUES ('{$uname}
 try{
   
   $conn->query($sql);
+  echo "Welcome";
 
 } catch (mysqli_sql_exception $e) {
   if ($e->getCode() == 1062) {
