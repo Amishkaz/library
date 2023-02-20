@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="menu.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Babylonica&display=swap" rel="stylesheet">        
+
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('account', this, '#379683')" id="loginPage" style=" float: right;padding: 3px; font-size: 17px; width: 10%;">
+  <img class="image" src="image/userimage.png" alt="Italian Trulli">
+  <label id="usrname">username</label><br>
+  <label id="email">email</label>
+</button>
+<button class="tablink" onclick="openPage('Home', this, '#020000')" id="homePage">Home</button>
+<button class="tablink" onclick="openPage('Search', this, '#749F82') " id="srchPage">Search</button>
+<button class="tablink" onclick="openPage('Return', this, '#2d93e6')" id="retPage">Return</button>
+<button class="tablink" style="width: 15%;" onclick="openPage('Borrow', this, '#2C74B3')"id="brPage">Borrow</button>
+
+<div id="Home" class="tabcontent">
+  <div class="homediv">
+    <video autoplay loop muted>
+      <source src="image/video3.mp4" type="video/mp4"> <!-- Replace with your video file format -->
+    </video>
+    <div class="overlay">
+      <div class="context">
+          <h1>World Of Books </h1><br>
+          <div class="video-box1" >
+              <video autoplay muted loop>
+                  <source src="image/video.mp4" type="video/mp4">
+                </video>
+                <div class="overlay-vid1">
+                  <h2 style="font-size: 20px;margin-top: 1%;">today a</h2>
+                  <h2 style="font-size: 50px;margin: -9%;">reader</h2>
+                  <h2 style="font-size: 20px;margin-top: 1%;">tommorow a</h2>
+                  <h2 style="font-size: 50px;margin: -9%;">leader</h2>
+                </div>
+          </div>
+          <div class="video-box2" >
+              <video autoplay muted loop>
+                  <source src="image/video2.mp4" type="video/mp4">
+                </video>
+                <div class="overlay-vid1">
+                  <h2 style="font-size: 20px;margin-top: 1%;">Reading </h2>
+                  <h2 style="font-size: 50px;margin: -9%;">makes your </h2>
+                  <h2 style="font-size: 20px;margin-top: 1%;">World</h2>
+                  <h2 style="font-size: 50px;margin: -9%;">Bigger</h2>
+                </div>
+          </div>
+
+          <p>
+              
+              A library is a collectionof materials, books or media that are accessible for use and not just for display purposes. A library provides physical (hard copies) or digital access (soft copies) materials, and may be a physical location or a virtual space, or both. A library's collection can include printed materials and other physical resources in many formats such as DVD, CD and cassette as well as access to information, music or other content held on bibliographic databases.
+              A library, which may vary widely in size, may be organized for use and maintained by a public body such as a government; an institution such as a school or museum; a corporation; or a private individual.                                                   
+          </p>
+          <div class="paragraph">
+              <p>
+                  Creator : Amishkaz
+              </p>
+              
+          </div>
+      </div>
+  </div>
+  </div>
+</div>
+
+<div id="Search" class="tabcontent">
+  <div id="srchForm" class="srform-box" style="max-width: 550px;">
+      <div><h1 id="srchtitle">Search</h1></div>
+        <form >
+           <div class="srinput-group">
+            
+            <div class="srinput-field">
+              <input id="searchBooks" type="text" placeholder="Enter Something">
+
+           </div>
+           <div id="srchdata">
+   
+           </div>
+
+        </form>
+
+      </div>
+  </div>
+</div>
+
+<div id="Return" class="tabcontent">
+  <div class="rrform-box">
+    <div><h1 id="rettitle">Select a book to return</h1></div>
+      <form >
+        <div class="rrinput-group">
+         <div class="rrbtn-field">
+            <button type="button" id="srchBurrowedbook" class="rrbutton">Search Books</button>             
+          </div>
+          <div class="rrinput-field">
+            <input type="text" id="input-retbname" disabled placeholder="Book Name">
+         </div>
+         <div class="rrinput-field">
+          <input type="text" id="input-retbdate" disabled placeholder="Burrow Date"> 
+         </div>
+          <div class="rrbtn-field">
+          <div>
+            <button id="confirmReturn" type="button" class="rrbutton">Return Book</button><br>
+          </div>
+         </div> 
+        </div>
+
+     </form>
+    </div>
+  </div>
+</div>
+
+<div id="Borrow" class="tabcontent">
+  <div class="brform-box">
+    <div><h1 id="Burrowtitle">Borrow a Book</h1></div>
+      <form >
+        <div class="brinput-group">
+         <div class="brbtn-field">
+            <button type="button" id="srchbook" class="button">Search Books</button>             
+          </div>
+          <div class="brinput-field" >
+            <input type="text" id="input-id" disabled placeholder="Book ID">
+         </div>
+         <div class="brinput-field">
+          <input type="text" id="input-name" disabled placeholder="email"> 
+         </div>
+         <div class="brinput-field">
+          <input type="date" id="input-date" placeholder="return date"><br>
+         </div>
+         <div class="brbtn-field">
+          <div>
+            <button id="confirm" type="button" class="brbutton">Borrow Book</button><br>
+          </div>
+         </div> 
+        </div>
+
+     </form>
+    </div>
+  </div>
+</div>
+
+<div id="account" class="tabcontent">
+  
+    <div class="lgform-box">
+      <div><h1 id="Logintitle">Sign up</h1></div>
+      <form >
+         <div class="lginput-group">
+          
+          <div class="lginput-field" id="namefield">
+            <i> <img src="image/user.jpg" alt="user" class="iconImage"></i>
+            <input id="usr" type="text" placeholder="name">
+
+          </div>
+          <div class="lginput-field">
+            <i> <img src="image/mail.png" alt="lock" class="iconImage"></i>
+            <input id="mail" type="text" placeholder="email">
+
+          </div>
+          <div class="lginput-field">
+            <i> <img src="image/lock.png" alt="lock" class="iconImage"></i>
+            <input id="pass" type="password" placeholder="password">
+
+          </div>
+          <div><p>Lost password <a href="#">Click Here!</a></p>
+          </div>
+
+          <div class="lgbtn-field">
+            <button type="button" id="signupbtn" class="button">Sign up</button>
+            <button type="button" id="signinbtn" class="button">Sign in</button>
+
+          </div> 
+         </div>
+
+      </form>
+
+    </div> 
+  
+</div>
+
+<script src="menu.js"></script> 
+</body>
+</html> 
