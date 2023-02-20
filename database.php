@@ -29,6 +29,5 @@ try{
       
   }
 }
-echo "Welcome ".$uname;
 $conn->close();
 ?>
