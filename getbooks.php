@@ -11,7 +11,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT bookId, bookName, bookAuthor , bookCatergory , availability FROM books";
+$sql = "SELECT bookId, bookName, bookAuthor , bookCatergory , availability FROM books order by bookName ";
 $result = $conn->query($sql);
 
 $data = array();

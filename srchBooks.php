@@ -17,23 +17,23 @@ $sql = "SELECT bookName,bookAuthor,bookCatergory,availability FROM books WHERE b
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
-    echo "<table  table-layout: auto; class='styled-table'>
+    echo "<table class='styled-table'>
     <tr>
-        <th class='shrink'>
+        <th>
             Name
         </th>
-        <th class='shrink'>
+        <th>
             Author
         </th>
-        <th class='shrink'>
+        <th>
             Catergory
         </th>
-        <th class='shrink'>
+        <th>
             availability
         </th>
     </tr>";
     while($row = mysqli_fetch_assoc($result)) {
-        echo "<tr><td class='shrink'>".$row["bookName"]."</td><td>".$row["bookAuthor"]."</td><td>".$row["bookCatergory"]."</td><td>".$row["availability"]."</td></tr>";
+        echo "<tr><td style='text-align: left;'>".$row["bookName"]."</td><td>".$row["bookAuthor"]."</td><td>".$row["bookCatergory"]."</td><td>".$row["availability"]."</td></tr>";
     }
     echo "</table>";
 } else {

@@ -1,7 +1,17 @@
 
   document.getElementById("homePage").click();
+  document.getElementById('message-box').style.display = 'none'
+///////////////message box///////////////////////////////
+function showMessageBox() {
+  document.getElementById('message-box').style.display = 'block';
+}
 
-  
+function hideMessageBox() {
+  document.getElementById('message-box').style.display = 'none';
+  document.getElementById("loginPage").click();
+}
+
+////////////////////////////////////////////////////
 function openPage(pageName,elmnt,color) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -117,7 +127,7 @@ let Burrowtitle=document.getElementById("Burrowtitle");
 let date=document.getElementById("input-date");
 srchbook.onclick=function(event){
   if(getCookie('email')==null || getCookie('username')==null){
-    document.getElementById("loginPage").click();
+    showMessageBox();
   }else{
     fetch('getbooks.php')
     .then(response => response.json())
@@ -127,7 +137,8 @@ srchbook.onclick=function(event){
         var left = (screen.width - 800) / 2;
         var top = (screen.height - 600) / 2;
         popup.moveTo(left, top);
-        popup.document.write('<!DOCTYPE html><html><head ><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><Burrowtitle>Select a book</Burrowtitle><link rel="stylesheet" href="table.css"></head>');
+        popup.document.write('<!DOCTYPE html><html><head ><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><link rel="stylesheet" href="table.css"></head>');
+        popup.document.write('<input class="input-field" type="text" id="searchInput" placeholder="Search...">');
         parent=window.opener;
         let table = '<table id="table" class="styled-table" ><tr disabled><th>Book ID</th><th>Book Name</th><th>author</th><th>Catergory</th></tr>';
         data.forEach(function(row) {
@@ -138,6 +149,8 @@ srchbook.onclick=function(event){
         table += '</table>';
         popup.document.write(table);
         popup.document.write('<script src="menu.js"></script>');
+        popup.document.write('<script src="srch.js"></script>');
+
         
     });
   }
@@ -197,7 +210,7 @@ var bkID;
 var bID;
 srchBurrowedbook.onclick=function(event){
   if(getCookie('email')==null || getCookie('username')==null){
-    document.getElementById("loginPage").click();
+    showMessageBox();
   }else{
     fetch('getBurrowedbooks.php?email='+getCookie('email')+'',{method: 'POST'})
     .then(response => response.json())
@@ -273,3 +286,4 @@ searchBooks.addEventListener('input',function(){
         srxhttp.send(); 
     
 })
+

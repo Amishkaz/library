@@ -11,6 +11,8 @@
 </head>
 <body>
 
+ 
+  
 <button class="tablink" onclick="openPage('account', this, '#379683')" id="loginPage" style=" float: right;padding: 3px; font-size: 17px; width: 10%;">
   <img class="image" src="image/userimage.png" alt="Italian Trulli">
   <label id="usrname">username</label><br>
@@ -78,7 +80,7 @@
               <input id="searchBooks" type="text" placeholder="Enter Something">
 
            </div>
-           <div id="srchdata">
+           <div class="srchDataContainer" id="srchdata">
    
            </div>
 
@@ -178,7 +180,16 @@
       </form>
 
     </div> 
-  
+
+</div>
+<div id="message-container">
+  <div id="message-box">
+		<div id="message-box-content">
+			<h2>Please Login to continue</h2>
+			<button onclick="hideMessageBox()" style="justify-content: center;">OK</button>
+		
+		</div>
+	</div>
 </div>
 
 <script src="menu.js"></script> 
