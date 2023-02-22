@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
         $data[] = $row;
     }
 }else {
-  echo "0 results";
+  $data='No results';
 }
 
 // Close the connection

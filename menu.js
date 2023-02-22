@@ -8,7 +8,7 @@ function showMessageBox() {
 
 function hideMessageBox() {
   document.getElementById('message-box').style.display = 'none';
-  document.getElementById("loginPage").click();
+  
 }
 
 ////////////////////////////////////////////////////
@@ -128,6 +128,7 @@ let date=document.getElementById("input-date");
 srchbook.onclick=function(event){
   if(getCookie('email')==null || getCookie('username')==null){
     showMessageBox();
+    document.getElementById("loginPage").click();
   }else{
     fetch('getbooks.php')
     .then(response => response.json())
@@ -203,6 +204,7 @@ function selectRowBurrow(row) {
 let srchBurrowedbook=document.getElementById("srchBurrowedbook");
 let confirmReturn=document.getElementById("confirmReturn");
 let rettitle=document.getElementById("rettitle");
+let msg=document.getElementById("errorMsg");
 //let retemail=getCookie('email');
 //let retemail='a';
 console.log(getCookie('email'));
@@ -211,10 +213,16 @@ var bID;
 srchBurrowedbook.onclick=function(event){
   if(getCookie('email')==null || getCookie('username')==null){
     showMessageBox();
+    document.getElementById("loginPage").click();
   }else{
     fetch('getBurrowedbooks.php?email='+getCookie('email')+'',{method: 'POST'})
     .then(response => response.json())
     .then(rdata => {
+        if(rdata=="No results"){
+          msg.innerHTML="Borrow a book";
+          showMessageBox();
+          document.getElementById("brPage").click();
+        }else{
         // JavaScript to generate the HTML table and populate it with data
         var rpopup = window.open("", "Popup", "width=800,height=600");
         var left = (screen.width - 800) / 2;
@@ -231,6 +239,7 @@ srchBurrowedbook.onclick=function(event){
         rtable += '</table>';
         rpopup.document.write(rtable);
         rpopup.document.write('<script src="menu.js"></script>');
+      }
     });   
   }
 }
