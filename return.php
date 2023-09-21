@@ -2,7 +2,7 @@
 $bkID=$_GET['bkID'];
 $bID=$_GET['bID'];
 //$d="afsdfdsf";
-$servername = "127.0.0.1.187";
+$servername = "127.0.0.1";
 $username = "admn";
 $password = "Asdf@1234";
 $dbname = "library";
