@@ -11,7 +11,7 @@ EXIT;
 
 sudo mysql_secure_installation
 
-Find the line that reads bind-address = 127.0.0.1 and change it to the private IP address of your EC2 instance. Save and close the file. 
+Find the line that reads bind-address = database and change it to the private IP address of your EC2 instance. Save and close the file. 
 sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
 
 sudo systemctl restart mysql

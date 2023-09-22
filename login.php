@@ -2,7 +2,7 @@
 $mail=$_GET['mail'];
 $pass=$_GET['pass'];
 //$d="afsdfdsf";
-$servername = "127.0.0.1";
+$servername = "database";
 $username = "admn";
 $password = "Asdf@1234";
 $dbname = "library";

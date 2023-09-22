@@ -1,7 +1,7 @@
 <?php
 $srchinput=$_GET['srchinput'];
 //$d="afsdfdsf";
-$servername = "127.0.0.1";
+$servername = "database";
 $username = "admn";
 $password = "Asdf@1234";
 $dbname = "library";
